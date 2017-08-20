@@ -1,7 +1,7 @@
 package com.ulfric.i18n.locale;
 
-public interface Locale {
+public interface Locale<T> {
 
-	String getMessage(String key);
+	T getMessage(String key);
 
 }
