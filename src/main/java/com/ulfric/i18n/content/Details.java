@@ -26,7 +26,11 @@ public class Details {
 	}
 
 	public static Details of(String key, String content) {
-		return of(new SingleDetail(key, Content.of(content)));  // TODO value
+		return of(new SingleDetail(key, Content.of(content)));
+	}
+
+	public static Details of(String key, Object content) {
+		return of(new SingleDetail(key, Content.of(content)));
 	}
 
 	public static Details of(Detail detail) {
