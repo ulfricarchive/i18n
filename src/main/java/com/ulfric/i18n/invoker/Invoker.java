@@ -32,7 +32,7 @@ public abstract class Invoker {
 		invokers.remove(invoker.getTargetType(), invoker);
 	}
 
-	public static Invoker lookup(Class<?> type, String name) { // TODO look for function on type (cached), support polymorphism
+	public static Invoker lookup(Class<?> type, String name) { // TODO support polymorphism
 		Map<Class<?>, Invoker> invokers = WRAPPERS.get(name);
 		if (invokers == null) {
 			return null;

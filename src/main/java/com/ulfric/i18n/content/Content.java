@@ -4,21 +4,22 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.ObjectUtils.Null;
 
 import com.ulfric.commons.value.Bean;
+import com.ulfric.dragoon.reflect.Classes;
 import com.ulfric.i18n.invoker.Invoker;
 
 import java.util.Objects;
 
 public class Content extends Bean {
 
-	private static final Content NULL = new Content(Null.class, ObjectUtils.NULL);
+	private static final Content NOTHING = new Content(Null.class, ObjectUtils.NULL);
 
-	public static Content nullContent() {
-		return NULL;
+	public static Content nothing() {
+		return NOTHING;
 	}
 
-	public static <T> Content of(Object value) {
+	public static Content of(Object value) {
 		if (value == null) {
-			return NULL;
+			return NOTHING;
 		}
 
 		if (value instanceof String) {
@@ -30,7 +31,7 @@ public class Content extends Bean {
 
 	public static Content of(String value) {
 		if (value == null) {
-			return NULL;
+			return NOTHING;
 		}
 
 		return new StringContent(value);
@@ -42,11 +43,11 @@ public class Content extends Bean {
 	protected <T> Content(Class<T> type, Object value) {
 		Objects.requireNonNull(type, "type");
 
-		this.type = type; // TODO handle dynamic from Dragoon
+		this.type = Classes.getNonDynamic(type);
 		this.value = value;
 	}
 
-	public final Content invoke(String method) { // TODO
+	public final Content invoke(String method) {
 		Invoker invoker = Invoker.lookup(type, method);
 		if (invoker == null) {
 			throw new IllegalArgumentException("Invalid invoker '" + method + "' for " + type);

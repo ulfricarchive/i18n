@@ -27,7 +27,7 @@ public final class IterableDetail extends Detail {
 
 	@Override
 	public Content getPrimaryContent() {
-		return content.isEmpty() ? Content.nullContent() : content.get(0); // TODO stop returning null
+		return content.isEmpty() ? Content.nothing() : content.get(0);
 	}
 
 	@Override
