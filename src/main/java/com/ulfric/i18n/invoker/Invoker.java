@@ -1,7 +1,8 @@
 package com.ulfric.i18n.invoker;
 
+import com.ulfric.commons.collection.Computations;
+
 import java.util.HashMap;
-import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -17,7 +18,7 @@ public abstract class Invoker {
 	public static void register(Invoker invoker) {
 		Objects.requireNonNull(invoker, "invoker");
 
-		WRAPPERS.computeIfAbsent(invoker.getName(), ignore -> new IdentityHashMap<>())
+		WRAPPERS.computeIfAbsent(invoker.getName(), Computations::newIdentityHashMapIgnoring)
 			.put(invoker.getTargetType(), invoker);
 	}
 

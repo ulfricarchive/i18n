@@ -1,6 +1,6 @@
 package com.ulfric.i18n.content;
 
-import com.ulfric.commons.stream.Collectors2;
+import com.ulfric.commons.collection.Collectors2;
 
 import java.util.Collections;
 import java.util.List;
