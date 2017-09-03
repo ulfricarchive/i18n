@@ -42,11 +42,11 @@ public abstract class Placeholder<T> implements Named, Function<T, Detail> {
 	}
 
 	public final Detail detail(Object content) {
-		return Detail.single(name, content);
+		return Detail.of(name, content);
 	}
 
 	public final Detail detail(String content) {
-		return Detail.single(name, content);
+		return Detail.of(name, content);
 	}
 
 }

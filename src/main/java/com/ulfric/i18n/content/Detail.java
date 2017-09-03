@@ -6,15 +6,15 @@ import java.util.Objects;
 
 public abstract class Detail implements Iterable<Content> {
 
-	public static Detail single(String name, Object content) {
+	public static Detail of(String name, Object content) {
 		return new SingleDetail(name, Content.of(content));
 	}
 
-	public static Detail single(String name, String content) {
+	public static Detail of(String name, String content) {
 		return new SingleDetail(name, Content.of(content));
 	}
 
-	public static Detail single(String name, Content content) {
+	public static Detail of(String name, Content content) {
 		return new SingleDetail(name, content);
 	}
 
