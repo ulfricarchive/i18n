@@ -2,7 +2,7 @@ package com.ulfric.i18n.content;
 
 final class StringContent extends Content {
 
-	public <T> StringContent(String value) {
+	public StringContent(String value) {
 		super(String.class, value);
 	}
 
