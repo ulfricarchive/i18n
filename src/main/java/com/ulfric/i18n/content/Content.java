@@ -5,7 +5,7 @@ import org.apache.commons.lang3.ObjectUtils.Null;
 
 import com.ulfric.commons.value.Bean;
 import com.ulfric.dragoon.reflect.Classes;
-import com.ulfric.i18n.invoker.Invoker;
+import com.ulfric.i18n.function.Function;
 
 import java.util.Objects;
 
@@ -47,13 +47,14 @@ public class Content extends Bean {
 		this.value = value;
 	}
 
-	public final Content invoke(String method) {
-		Invoker invoker = Invoker.lookup(type, method);
-		if (invoker == null) {
-			throw new IllegalArgumentException("Invalid invoker '" + method + "' for " + type);
+	public final Content invoke(String functionName) {
+		@SuppressWarnings("unchecked")
+		Function<Object> function = (Function<Object>) Function.lookup(functionName, type);
+		if (function == null) {
+			throw new IllegalArgumentException("Invalid function '" + functionName + "' for " + type);
 		}
 
-		return Content.of(invoker.invoke(value));
+		return Content.of(function.apply(value));
 	}
 
 	public final Object getValue() {
