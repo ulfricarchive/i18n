@@ -1,17 +1,18 @@
 package com.ulfric.i18n.function;
 
-import com.ulfric.commons.collection.Computations;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import com.ulfric.commons.collection.Computations;
 
 public abstract class Function<T> implements java.util.function.Function<T, Object> {
 
 	private static final Map<String, List<Function<?>>> FUNCTIONS = new HashMap<>();
 
 	static {
+		register(new StringFunction());
 		register(new LowercaseFunction());
 		register(new UppercaseFunction());
 	}
