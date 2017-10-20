@@ -13,6 +13,7 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 
 	static {
 		register(new StringFunction());
+		register(new LengthFunction());
 		register(new LowercaseFunction());
 		register(new UppercaseFunction());
 	}

@@ -75,4 +75,9 @@ public class Details {
 		backing.put(detail.getName(), detail);
 	}
 
+	@Override
+	public String toString() {
+		return "Detail[" + backing.toString() + ']';
+	}
+
 }
