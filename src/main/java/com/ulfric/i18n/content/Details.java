@@ -14,10 +14,16 @@ public class Details {
 
 		@Override
 		public void add(String key, Object value) {
+			failOnAdd();
 		}
 
 		@Override
 		public void add(Detail detail) {
+			failOnAdd();
+		}
+
+		private void failOnAdd() {
+			throw new UnsupportedOperationException("Cannot add details to the NONE instance");
 		}
 	};
 
