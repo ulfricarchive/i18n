@@ -1,17 +1,14 @@
 package com.ulfric.i18n.content;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.ObjectUtils.Null;
+import java.util.Objects;
 
 import com.ulfric.commons.value.Bean;
 import com.ulfric.dragoon.reflect.Classes;
 import com.ulfric.i18n.function.Function;
 
-import java.util.Objects;
-
 public class Content extends Bean {
 
-	private static final Content NOTHING = new Content(Null.class, ObjectUtils.NULL);
+	private static final Content NOTHING = new Content(Nothing.class, Nothing.INSTANCE);
 
 	public static Content nothing() {
 		return NOTHING;
@@ -68,6 +65,15 @@ public class Content extends Bean {
 	@Override
 	public String toString() {
 		return getDisplayable();
+	}
+
+	enum Nothing {
+		INSTANCE;
+
+		@Override
+		public final String toString() {
+			return getClass().getSimpleName().toLowerCase();
+		}
 	}
 
 }
