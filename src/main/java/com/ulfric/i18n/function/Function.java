@@ -16,6 +16,7 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 		register(new LengthFunction());
 		register(new LowercaseFunction());
 		register(new UppercaseFunction());
+		register(new PrettyFunction());
 	}
 
 	public static void register(Function<?> function) {
