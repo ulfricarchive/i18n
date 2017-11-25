@@ -17,6 +17,7 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 		register(new LowercaseFunction());
 		register(new UppercaseFunction());
 		register(new PrettyFunction());
+		register(new SizeFunction());
 	}
 
 	public static void register(Function<?> function) {
@@ -60,9 +61,9 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 	}
 
 	private final String name;
-	private final Class<T> targetType;
+	private final Class<? extends T> targetType;
 
-	public Function(String name, Class<T> targetType) {
+	public Function(String name, Class<? extends T> targetType) {
 		Objects.requireNonNull(name, "name");
 		Objects.requireNonNull(targetType, "targetType");
 
