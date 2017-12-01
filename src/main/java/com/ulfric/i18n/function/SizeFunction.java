@@ -4,9 +4,8 @@ import java.util.Collection;
 
 public class SizeFunction extends Function<Collection<?>> {
 
-	@SuppressWarnings("unchecked")
 	public SizeFunction() {
-		super("size", (Class<? extends Collection<?>>) Collection.class);
+		super("size", Collection.class);
 	}
 
 	@Override

@@ -61,9 +61,9 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 	}
 
 	private final String name;
-	private final Class<? extends T> targetType;
+	private final Class<?> targetType;
 
-	public Function(String name, Class<? extends T> targetType) {
+	public Function(String name, Class<?> targetType) {
 		Objects.requireNonNull(name, "name");
 		Objects.requireNonNull(targetType, "targetType");
 
