@@ -1,5 +1,7 @@
 package com.ulfric.i18n.content;
 
+import org.apache.commons.lang3.BooleanUtils;
+
 public class ContentHelper {
 
 	public static boolean isTrue(Content content) {
@@ -8,7 +10,12 @@ public class ContentHelper {
 			return (boolean) value;
 		}
 
-		return Boolean.parseBoolean(content.getDisplayable());
+		if (value == null) {
+			return false;
+		}
+
+		Boolean booleanValue = BooleanUtils.toBooleanObject(content.getDisplayable());
+		return booleanValue == null ? true : booleanValue;
 	}
 
 	private ContentHelper() {
