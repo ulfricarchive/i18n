@@ -10,6 +10,14 @@ public class Content extends Bean {
 
 	private static final Content NOTHING = new Content(Nothing.class, Nothing.INSTANCE);
 
+	public static boolean isNothing(Content content) {
+		if (content == null) {
+			return true;
+		}
+
+		return content == NOTHING;
+	}
+
 	public static Content nothing() {
 		return NOTHING;
 	}
@@ -48,6 +56,10 @@ public class Content extends Bean {
 		@SuppressWarnings("unchecked")
 		Function<Object> function = (Function<Object>) Function.lookup(functionName, type);
 		if (function == null) {
+			if (type == Nothing.class) {
+				return nothing();
+			}
+
 			throw new IllegalArgumentException("Invalid function '" + functionName + "' for " + type);
 		}
 
