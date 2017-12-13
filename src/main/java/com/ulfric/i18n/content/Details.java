@@ -81,6 +81,12 @@ public class Details {
 		backing.put(detail.getName(), detail);
 	}
 
+	public void remove(Detail detail) {
+		Objects.requireNonNull(detail, "detail");
+
+		backing.remove(detail.getName(), detail);
+	}
+
 	@Override
 	public String toString() {
 		return "Detail[" + backing.toString() + ']';

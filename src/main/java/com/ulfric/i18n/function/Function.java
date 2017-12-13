@@ -52,7 +52,7 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 		}
 
 		for (Function<?> function : functions) {
-			if (type.isAssignableFrom(function.targetType)) {
+			if (function.targetType.isAssignableFrom(type)) {
 				return (Function<T>) function;
 			}
 		}
