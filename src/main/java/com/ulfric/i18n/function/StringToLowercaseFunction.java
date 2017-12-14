@@ -1,8 +1,8 @@
 package com.ulfric.i18n.function;
 
-public class LowercaseFunction extends Function<String> {
+public class StringToLowercaseFunction extends Function<String> {
 
-	public LowercaseFunction() {
+	public StringToLowercaseFunction() {
 		super("lowercase", String.class);
 	}
 

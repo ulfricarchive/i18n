@@ -2,9 +2,9 @@ package com.ulfric.i18n.function;
 
 import com.ulfric.commons.value.UniqueIdHelper;
 
-public class UuidFunction extends Function<String> {
+public class StringToUuidFunction extends Function<String> {
 
-	public UuidFunction() {
+	public StringToUuidFunction() {
 		super("uuid", String.class);
 	}
 

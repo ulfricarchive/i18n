@@ -12,12 +12,13 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 	private static final Map<String, List<Function<?>>> FUNCTIONS = new HashMap<>();
 
 	static {
-		register(new StringFunction());
-		register(new LengthFunction());
-		register(new LowercaseFunction());
-		register(new UppercaseFunction());
-		register(new PrettyFunction());
-		register(new SizeFunction());
+		register(new ObjectToStringFunction());
+		register(new CharSequenceToLengthFunction());
+		register(new StringToLowercaseFunction());
+		register(new StringToUppercaseFunction());
+		register(new NumberToPrettyFunction());
+		register(new CollectionToSizeFunction());
+		register(new InstantToPrettyFunction());
 	}
 
 	public static void register(Function<?> function) {

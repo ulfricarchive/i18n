@@ -1,8 +1,8 @@
 package com.ulfric.i18n.function;
 
-public class LengthFunction extends Function<CharSequence> {
+public class CharSequenceToLengthFunction extends Function<CharSequence> {
 
-	public LengthFunction() {
+	public CharSequenceToLengthFunction() {
 		super("length", CharSequence.class);
 	}
 

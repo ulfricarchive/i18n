@@ -1,8 +1,8 @@
 package com.ulfric.i18n.function;
 
-public class StringFunction extends Function<Object> {
+public class ObjectToStringFunction extends Function<Object> {
 
-	public StringFunction() {
+	public ObjectToStringFunction() {
 		super("string", Object.class);
 	}
 

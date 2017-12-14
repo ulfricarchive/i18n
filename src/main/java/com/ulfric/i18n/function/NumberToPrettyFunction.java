@@ -2,9 +2,9 @@ package com.ulfric.i18n.function;
 
 import java.text.NumberFormat;
 
-public class PrettyFunction extends Function<Number> {
+public class NumberToPrettyFunction extends Function<Number> {
 
-	public PrettyFunction() {
+	public NumberToPrettyFunction() {
 		super("pretty", Number.class);
 	}
 

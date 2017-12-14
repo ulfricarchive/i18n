@@ -1,8 +1,8 @@
 package com.ulfric.i18n.function;
 
-public class UppercaseFunction extends Function<String> {
+public class StringToUppercaseFunction extends Function<String> {
 
-	public UppercaseFunction() {
+	public StringToUppercaseFunction() {
 		super("uppercase", String.class);
 	}
 
