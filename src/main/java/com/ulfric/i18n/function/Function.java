@@ -19,6 +19,7 @@ public abstract class Function<T> implements java.util.function.Function<T, Obje
 		register(new NumberToPrettyFunction());
 		register(new CollectionToSizeFunction());
 		register(new InstantToPrettyFunction());
+		register(new EnumToPrettyFunction());
 	}
 
 	public static void register(Function<?> function) {
